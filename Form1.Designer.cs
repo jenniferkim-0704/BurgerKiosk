@@ -77,7 +77,6 @@
             rdoHamBurger.Name = "rdoHamBurger";
             rdoHamBurger.Size = new Size(97, 34);
             rdoHamBurger.TabIndex = 0;
-            rdoHamBurger.TabStop = true;
             rdoHamBurger.Text = "햄버거";
             rdoHamBurger.UseVisualStyleBackColor = true;
             // 
@@ -90,13 +89,13 @@
             rdoBulgogiBurger.Name = "rdoBulgogiBurger";
             rdoBulgogiBurger.Size = new Size(139, 34);
             rdoBulgogiBurger.TabIndex = 0;
-            rdoBulgogiBurger.TabStop = true;
             rdoBulgogiBurger.Text = "불고기버거";
             rdoBulgogiBurger.UseVisualStyleBackColor = true;
             // 
             // rdoChickenBurger
             // 
             rdoChickenBurger.AutoSize = true;
+            rdoChickenBurger.Checked = true;
             rdoChickenBurger.Font = new Font("맑은 고딕", 12.5F, FontStyle.Bold);
             rdoChickenBurger.ForeColor = Color.DarkMagenta;
             rdoChickenBurger.Location = new Point(6, 257);
