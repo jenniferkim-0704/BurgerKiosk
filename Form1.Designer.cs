@@ -34,6 +34,7 @@
             rdoBulgogiBurger = new RadioButton();
             rdoChickenBurger = new RadioButton();
             grpMenu = new GroupBox();
+            radioButton1 = new RadioButton();
             picChickenBurger = new PictureBox();
             picBulgogiBurger = new PictureBox();
             picHamBurger = new PictureBox();
@@ -48,6 +49,7 @@
             grpOrder = new GroupBox();
             btnOrder = new Button();
             btnInit = new Button();
+            lblError = new Label();
             grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picChickenBurger).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picBulgogiBurger).BeginInit();
@@ -76,7 +78,6 @@
             rdoHamBurger.Name = "rdoHamBurger";
             rdoHamBurger.Size = new Size(97, 34);
             rdoHamBurger.TabIndex = 1;
-            rdoHamBurger.TabStop = true;
             rdoHamBurger.Text = "햄버거";
             rdoHamBurger.UseVisualStyleBackColor = true;
             // 
@@ -89,7 +90,6 @@
             rdoBulgogiBurger.Name = "rdoBulgogiBurger";
             rdoBulgogiBurger.Size = new Size(139, 34);
             rdoBulgogiBurger.TabIndex = 2;
-            rdoBulgogiBurger.TabStop = true;
             rdoBulgogiBurger.Text = "불고기버거";
             rdoBulgogiBurger.UseVisualStyleBackColor = true;
             // 
@@ -102,12 +102,12 @@
             rdoChickenBurger.Name = "rdoChickenBurger";
             rdoChickenBurger.Size = new Size(118, 34);
             rdoChickenBurger.TabIndex = 3;
-            rdoChickenBurger.TabStop = true;
             rdoChickenBurger.Text = "치킨버거";
             rdoChickenBurger.UseVisualStyleBackColor = true;
             // 
             // grpMenu
             // 
+            grpMenu.Controls.Add(radioButton1);
             grpMenu.Controls.Add(picChickenBurger);
             grpMenu.Controls.Add(picBulgogiBurger);
             grpMenu.Controls.Add(picHamBurger);
@@ -122,6 +122,20 @@
             grpMenu.TabIndex = 4;
             grpMenu.TabStop = false;
             grpMenu.Text = "메뉴 선택";
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Checked = true;
+            radioButton1.Font = new Font("맑은 고딕", 12F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            radioButton1.Location = new Point(6, 314);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(37, 32);
+            radioButton1.TabIndex = 8;
+            radioButton1.TabStop = true;
+            radioButton1.Text = ".";
+            radioButton1.UseVisualStyleBackColor = true;
+            radioButton1.Visible = false;
             // 
             // picChickenBurger
             // 
@@ -283,12 +297,25 @@
             btnInit.UseVisualStyleBackColor = false;
             btnInit.Click += btnInit_Click;
             // 
+            // lblError
+            // 
+            lblError.AutoSize = true;
+            lblError.Font = new Font("맑은 고딕", 15.5F, FontStyle.Bold);
+            lblError.ForeColor = Color.Red;
+            lblError.Location = new Point(503, 391);
+            lblError.Name = "lblError";
+            lblError.Size = new Size(275, 36);
+            lblError.TabIndex = 16;
+            lblError.Text = "메뉴 선택을 해주세요!";
+            lblError.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblError);
             Controls.Add(btnInit);
             Controls.Add(btnOrder);
             Controls.Add(grpOrder);
@@ -331,5 +358,7 @@
         private GroupBox grpOrder;
         private Button btnOrder;
         private Button btnInit;
+        private RadioButton radioButton1;
+        private Label lblError;
     }
 }

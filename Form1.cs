@@ -9,7 +9,14 @@ namespace BurgerKiosk
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            int totalCost = 0;
+            // 메뉴가 선택되지 않은 경우 오류 메시지 표시
+            if (!rdoHamBurger.Checked && !rdoBulgogiBurger.Checked && !rdoChickenBurger.Checked)
+            {
+                lblError.Visible = true;
+                return;
+            }
+
+            int totalCost = 0; // 총 금액 계산을 위한 변수 초기화
 
             // 햄버거 종류에 따른 가격 계산
             if (rdoHamBurger.Checked)
@@ -54,21 +61,26 @@ namespace BurgerKiosk
                 totalCost += 500;
                 lstOrder.Items.Add("소스 추가 500원");
             }
-            lblTotalCost.Text = "총 금액:" + totalCost + "원";
+            lblTotalCost.Text = "총 금액 : " + totalCost.ToString("N0") + "원";
         }
 
         private void btnInit_Click(object sender, EventArgs e)
         {
+            // 햄버거 종류 라디오 버튼 초기화
             rdoHamBurger.Checked = false;
             rdoBulgogiBurger.Checked = false;
             rdoChickenBurger.Checked = false;
 
+            // 추가 메뉴 체크박스 초기화
             chkPotato.Checked = false;
             chkCola.Checked = false;
             chkCheese.Checked = false;
             chkSauce.Checked = false;
 
+            // 주문 내역 리스트 초기화
             lstOrder.Items.Clear();
+
+            // 총 금액 초기화
             lblTotalCost.Text = "총 금액 : 0원";
         }
     }
